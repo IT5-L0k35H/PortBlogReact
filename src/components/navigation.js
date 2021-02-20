@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Avatar } from 'antd'
 
 const navLinks = [
     {
@@ -25,18 +26,31 @@ const navLinks = [
 ]
 
 export default function Navigation() {
-    return (
-        <nav className="site-navigation">
-            <span>Harshdeep Singh</span>
-            <ul>
-                {navLinks.map((link, index) => (
+    const [menuActive, setMenuActive] = useState(false)
 
-                    <li key={index}>
-                        <Link to={link.path}>{link.title}</Link>
-                    </li>
-                ))
-                }
-            </ul>
+    return (
+        <nav className={`site-navigation ${menuActive && 'active'}`} role="navigation">
+            <span className="menu-title">Harshdeep Singh</span>
+            <div
+                className="menu-content-container"
+            >
+                <ul>
+                    {navLinks.map((link, index) => (
+                        <li key={index}>
+                            <Link to={link.path}>{link.title}</Link>
+                        </li>
+                    ))
+                    }
+                </ul>
+                <div className="menu-avatar-container">
+                    <Avatar size={38} src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                    <span className="menu-avatar-name">Harshdeep Singh</span>
+                </div>
+            </div>
+            <i
+                className="icon ionicons ion-ios-menu"
+                onClick={(ev) => setMenuActive(!menuActive)}
+            />
         </nav>
     )
 }
