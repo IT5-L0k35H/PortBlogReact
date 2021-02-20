@@ -2,12 +2,10 @@ import React from 'react'
 import { TagRow } from './'
 
 export default function MasonryPost({ post, tagsOnTop }) {
-    // const windowWidth = window.innerWidth
-    const style = { backgroundImage: `url("${require(`../../assests/images/${post.image}`)}")` };
-    // const style = { backgroundImage: `url("../../assests/images/money.jpg")` };
+    const windowWidth = window.innerWidth
+    const imageBackground = { backgroundImage: `url("${require(`./../../assests/images/${post.image}`)}")` };
 
-
-    // const style = windowWidth > 900 ? { ...imageBackground, ...post.style } : imageBackground
+    const style = windowWidth > 900 ? { ...imageBackground, ...post.style } : imageBackground
 
     return (
         <a className="masonry-post overlay" style={style} href={post.link}>

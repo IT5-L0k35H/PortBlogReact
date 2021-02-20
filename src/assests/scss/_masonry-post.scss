@@ -9,6 +9,7 @@
     text-decoration: none;
     margin: 0 auto;
     min-height: 225px;
+    // background-image: url('');
 
     .image-text {
         height: 100%;
@@ -19,7 +20,10 @@
         box-sizing: border-box;
     }
 
-    .image-title, .image-date, .tags-container, div {
+    .image-title,
+    .image-date,
+    .tags-container,
+    div {
         float: left;
         width: 100%;
         z-index: 10;
