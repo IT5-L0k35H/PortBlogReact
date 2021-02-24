@@ -22,6 +22,10 @@ const navLinks = [
     {
         title: 'Contact',
         path: '/contact'
+    },
+    {
+        title: 'Post Viewer',
+        path: '/post'
     }
 ]
 
